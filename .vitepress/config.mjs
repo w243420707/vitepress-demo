@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // 站点标题
+  title: '赛博资源站',  
   // base 设置成根路径
   base: '/',
   // 排除 skills 目录，不参与构建
