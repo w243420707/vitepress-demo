@@ -8,10 +8,10 @@ hero:
   tagline: 今天干点啥🤔
   actions:
     - theme: brand
-      text: Markdown 示例
-      link: /markdown-examples
+      text: 全部资源概述1
+      link: /全部资源概述
     - theme: alt
-      text: 全部资源概述
+      text: 全部资源概述2
       link: /全部资源概述
 
 features:

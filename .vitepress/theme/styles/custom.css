@@ -1,0 +1,367 @@
+/* 白黑金配色方案 - White, Black, Gold Theme */
+
+:root {
+  /* 主色调 - 白色背景 */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f8f8f8;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f5f5f5;
+  
+  /* 文字颜色 - 黑色系 */
+  --vp-c-text-1: #1a1a1a;
+  --vp-c-text-2: #333333;
+  --vp-c-text-3: #666666;
+  
+  /* 品牌色 - 深棕色 #4d3b03 */
+  --vp-c-brand-1: #4d3b03;
+  --vp-c-brand-2: #5c4704;
+  --vp-c-brand-3: #3d2f02;
+  --vp-c-brand-soft: rgba(77, 59, 3, 0.14);
+  
+  /* 强调色 - 深棕色 */
+  --vp-c-accent: #4d3b03;
+  --vp-c-accent-bg: #4d3b03;
+  --vp-c-accent-hover: #5c4704;
+  
+  /* 边框和分割线 - 浅棕色/灰色 */
+  --vp-c-border: #e5e5e5;
+  --vp-c-divider: #e8e8e8;
+  --vp-c-gutter: #f0f0f0;
+  
+  /* 按钮 - 深棕色 */
+  --vp-button-brand-bg: #4d3b03;
+  --vp-button-brand-hover-bg: #5c4704;
+  --vp-button-brand-active-bg: #3d2f02;
+  --vp-button-brand-text: #ffffff;
+  
+  /* 链接 - 深棕色 */
+  --vp-c-link: #4d3b03;
+  --vp-c-link-hover: #5c4704;
+  
+  /* 代码块 - 深色背景配深棕色高亮 */
+  --vp-code-block-bg: #1a1a1a;
+  --vp-code-line-highlight-color: rgba(77, 59, 3, 0.1);
+  
+  /* 导航栏 */
+  --vp-nav-bg: rgba(255, 255, 255, 0.95);
+  --vp-nav-bg-blur: rgba(255, 255, 255, 0.8);
+  
+  /* 侧边栏 */
+  --vp-sidebar-bg: #ffffff;
+  
+  /* 标记/徽章 - 深棕色 */
+  --vp-badge-info-bg: rgba(77, 59, 3, 0.1);
+  --vp-badge-info-text: #4d3b03;
+  --vp-badge-tip-bg: rgba(77, 59, 3, 0.1);
+  --vp-badge-tip-text: #4d3b03;
+  --vp-badge-warning-bg: rgba(255, 165, 0, 0.1);
+  --vp-badge-warning-text: #ff8c00;
+  --vp-badge-danger-bg: rgba(255, 0, 0, 0.1);
+  --vp-badge-danger-text: #dc143c;
+}
+
+/* 深色模式 - 黑金配色 */
+.dark {
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-alt: #141414;
+  --vp-c-bg-elv: #1a1a1a;
+  --vp-c-bg-soft: #1f1f1f;
+  
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #e0e0e0;
+  --vp-c-text-3: #a0a0a0;
+  
+  --vp-c-brand-1: #6b5205;
+  --vp-c-brand-2: #7a6006;
+  --vp-c-brand-3: #8a6e07;
+  --vp-c-brand-soft: rgba(107, 82, 5, 0.16);
+  
+  --vp-c-border: #2a2a2a;
+  --vp-c-divider: #333333;
+  --vp-c-gutter: #1a1a1a;
+  
+  --vp-button-brand-bg: #6b5205;
+  --vp-button-brand-hover-bg: #7a6006;
+  --vp-button-brand-active-bg: #8a6e07;
+  --vp-button-brand-text: #ffffff;
+  
+  --vp-c-link: #6b5205;
+  --vp-c-link-hover: #8a6e07;
+  
+  --vp-code-block-bg: #0f0f0f;
+  --vp-code-line-highlight-color: rgba(107, 82, 5, 0.15);
+  
+  --vp-nav-bg: rgba(10, 10, 10, 0.95);
+  --vp-nav-bg-blur: rgba(10, 10, 10, 0.8);
+  
+  --vp-sidebar-bg: #0a0a0a;
+}
+
+/* 导航栏样式 */
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPNavBarTitle {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.VPNavBarTitle .title {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* 菜单链接悬停效果 */
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-brand-1);
+  border-bottom: 2px solid var(--vp-c-brand-1);
+}
+
+/* 侧边栏样式 */
+.VPSidebar {
+  background-color: var(--vp-sidebar-bg);
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem .text {
+  color: var(--vp-c-text-2);
+}
+
+.VPSidebarItem:hover .text {
+  color: var(--vp-c-brand-1);
+}
+
+.VPSidebarItem.is-active .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.VPSidebarItem.is-active .indicator {
+  background-color: var(--vp-c-brand-1);
+}
+
+/* 首页 Hero 区域 */
+.VPHero .name {
+  color: var(--vp-c-text-1);
+}
+
+.VPHero .text {
+  color: var(--vp-c-brand-1);
+}
+
+.VPHero .tagline {
+  color: var(--vp-c-text-2);
+}
+
+/* 按钮样式 */
+.VPButton {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.VPButton.brand {
+  background-color: var(--vp-c-brand-1);
+  color: #ffffff;
+  border: none;
+}
+
+.dark .VPButton.brand {
+  color: #0a0a0a;
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-c-brand-2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(77, 59, 3, 0.3);
+}
+
+.VPButton.alt {
+  border: 1px solid var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background-color: transparent;
+}
+
+.VPButton.alt:hover {
+  background-color: var(--vp-c-brand-soft);
+}
+
+/* 特性卡片 */
+.VPFeature {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 20px rgba(77, 59, 3, 0.1);
+}
+
+.VPFeature .icon {
+  color: var(--vp-c-brand-1);
+}
+
+.VPFeature .title {
+  color: var(--vp-c-text-1);
+}
+
+.VPFeature .details {
+  color: var(--vp-c-text-2);
+}
+
+/* 文章链接 */
+.VPLinkCard {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.VPLinkCard:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 12px rgba(77, 59, 3, 0.1);
+}
+
+/* 搜索框 */
+.VPLocalSearchBox .search-input {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.VPLocalSearchBox .search-input:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
+}
+
+/* 代码块样式 */
+.vp-code-block {
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* 表格样式 */
+.vp-doc table {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  border-bottom: 2px solid var(--vp-c-brand-1);
+}
+
+.vp-doc td {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+/* 引用块 */
+.vp-doc blockquote {
+  border-left: 4px solid var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+}
+
+/* 分割线 */
+.vp-doc hr {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2);
+}
+
+/* 选中文字样式 */
+::selection {
+  background-color: rgba(77, 59, 3, 0.3);
+  color: inherit;
+}
+
+/* 移动端菜单按钮 */
+.VPNavBarHamburger .container span {
+  background-color: var(--vp-c-text-1);
+}
+
+/* 页脚 */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-alt);
+}
+
+/* 上一页/下一页导航 */
+.VPDocFooter .prev-next {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.VPDocFooter .link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 编辑链接 */
+.VPEditLink .link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 最后更新时间 */
+.VPLastUpdated {
+  color: var(--vp-c-text-3);
+}
+
+/* 语言切换 */
+.VPFlyout .button:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 社交链接 */
+.VPSocialLink:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 广告弹窗适配白黑金主题 */
+.cyber-offer-popup {
+  background: var(--vp-c-bg) !important;
+  border: 1px solid var(--vp-c-brand-1) !important;
+  box-shadow: 0 10px 28px rgba(77, 59, 3, 0.15) !important;
+}
+
+.cyber-offer-popup .offer-header h3 {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.cyber-offer-popup .offer-content p {
+  color: var(--vp-c-text-2) !important;
+}
+
+.cyber-offer-popup .offer-link {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.cyber-offer-popup .offer-link:hover {
+  color: var(--vp-c-brand-2) !important;
+}
+
+.cyber-offer-popup .offer-coupon {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+}

@@ -1,5 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { onMounted } from 'vue'
+import './styles/fonts.css'
+import './styles/custom.css'
 
 export default {
   ...DefaultTheme,
@@ -10,7 +12,7 @@ export default {
     // 添加广告样式
     const style = document.createElement('style')
     style.textContent = `
-      .cyber-ad-popup {
+      .cyber-offer-popup {
         --ad-scale: 0.9;
         position: fixed;
         bottom: 20px;
@@ -22,27 +24,29 @@ export default {
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
         z-index: 1000;
         padding: 16px 16px 14px;
-        animation: adPopupSlideIn 0.3s ease-out both;
+        animation: offerPopupSlideIn 0.3s ease-out both;
         border: 1px solid var(--vp-c-divider);
         backdrop-filter: blur(4px);
         transform: scale(var(--ad-scale));
         transform-origin: bottom right;
       }
 
-      .cyber-ad-popup .ad-content {
+      .cyber-offer-popup .offer-content {
         position: relative;
-        padding-right: 16px;
         padding-bottom: 32px;
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: left;
       }
       
-      .cyber-ad-popup .ad-header {
+      .cyber-offer-popup .offer-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 8px;
       }
       
-      .cyber-ad-popup .ad-header h3 {
+      .cyber-offer-popup .offer-header h3 {
         margin: 0;
         color: var(--vp-c-text-1);
         font-size: 24px;
@@ -50,24 +54,24 @@ export default {
         letter-spacing: 0.2px;
       }
       
-      .cyber-ad-popup .ad-content p {
+      .cyber-offer-popup .offer-content p {
         margin: 0;
         color: var(--vp-c-text-2);
         line-height: 1.85;
       }
 
-      .cyber-ad-popup .ad-content ul {
+      .cyber-offer-popup .offer-content ul {
         margin: 10px 0 8px;
         padding-left: 18px;
         color: var(--vp-c-text-2);
       }
 
-      .cyber-ad-popup .ad-content li {
+      .cyber-offer-popup .offer-content li {
         margin: 3px 0;
         line-height: 1.75;
       }
 
-      .cyber-ad-popup .ad-link {
+      .cyber-offer-popup .offer-link {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -80,17 +84,17 @@ export default {
         font-size: 15px;
       }
 
-      .cyber-ad-popup .ad-link:hover {
+      .cyber-offer-popup .offer-link:hover {
         text-decoration: underline;
       }
 
-      .cyber-ad-popup .ad-coupon {
+      .cyber-offer-popup .offer-coupon {
         margin-top: 6px !important;
         font-weight: 600;
         color: var(--vp-c-text-1) !important;
       }
       
-      .cyber-ad-popup .ad-close {
+      .cyber-offer-popup .offer-close {
         background: none !important;
         border: none !important;
         color: #999 !important;
@@ -105,11 +109,11 @@ export default {
         right: 10px !important;
       }
       
-      .cyber-ad-popup .ad-close:hover {
+      .cyber-offer-popup .offer-close:hover {
         color: #666 !important;
       }
       
-      @keyframes adPopupSlideIn {
+      @keyframes offerPopupSlideIn {
         from {
           transform: translateY(100%) scale(var(--ad-scale));
           opacity: 0;
@@ -125,27 +129,28 @@ export default {
     // 页面加载完成后添加广告
     setTimeout(() => {
       const adContainer = document.createElement('div')
-      adContainer.className = 'cyber-ad-popup'
+      adContainer.className = 'cyber-offer-popup'
       adContainer.innerHTML = `
-        <button class="ad-close">×</button>
-        <div class="ad-content">
-          <div class="ad-header">
+        <button class="offer-close">×</button>
+        <div class="offer-content">
+          <div class="offer-header">
             <h3>🚀 网络工具</h3>
           </div>
           <p>新加坡实体企业运营，支持 AI和视频解锁 全系产品，Win/Mac/iPhone/Android 均可使用。</p>
           <ul>
-            <li>推荐套餐：99元 / 99999GB</li>
-            <li>     最低 9.9元/年起</li>
+            <li>推荐套餐</li>
+            <li>99元 / 99999GB</li>
+            <li>最低 9.9元/年起</li>
             <li>流量不限时，用完即止，送谷歌账号</li>
           </ul>
-          <p class="ad-coupon">八五折优惠券：oqPCcC84</p>
-          <a class="ad-link" href="https://skylumo.cc" target="_blank" rel="noopener noreferrer">点击进入</a>
+          <p class="offer-coupon">八五折优惠券：oqPCcC84</p>
+          <a class="offer-link" href="https://skylumo.cc" target="_blank" rel="noopener noreferrer">点击进入</a>
         </div>
       `
       document.body.appendChild(adContainer)
       
       // 直接设置关闭按钮的样式
-      const closeButton = adContainer.querySelector('.ad-close')
+      const closeButton = adContainer.querySelector('.offer-close')
       closeButton.style.background = 'none'
       closeButton.style.border = 'none'
       closeButton.style.color = '#999'
