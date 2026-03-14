@@ -1,0 +1,1 @@
+import{_ as a,c as n,o as e,ah as i}from"./chunks/framework.qDYPFB0Q.js";const k=JSON.parse('{"title":"VitePress-demo","description":"","frontmatter":{},"headers":[],"relativePath":"readme.md","filePath":"readme.md"}'),p={name:"readme.md"};function t(l,s,r,h,c,d){return e(),n("div",null,s[0]||(s[0]=[i("",13)]))}const g=a(p,[["render",t]]);export{k as __pageData,g as default};

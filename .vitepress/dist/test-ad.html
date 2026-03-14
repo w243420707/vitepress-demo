@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试弹窗广告</title>
+  <style>
+    .ad-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 360px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      z-index: 1000;
+      padding: 16px 16px 14px;
+      animation: slideIn 0.3s ease-out;
+      border: 1px solid #e5e7eb;
+    }
+
+    .ad-content {
+      position: relative;
+      padding-right: 16px;
+      padding-bottom: 32px;
+    }
+
+    .ad-content h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0.2px;
+    }
+
+    .ad-content p {
+      margin: 0;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    .ad-content ul {
+      margin: 10px 0 8px;
+      padding-left: 18px;
+      color: #666;
+    }
+
+    .ad-content li {
+      margin: 3px 0;
+      line-height: 1.6;
+    }
+
+    .ad-coupon {
+      margin-top: 6px !important;
+      font-weight: 600;
+      color: #333 !important;
+    }
+
+    .ad-link {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .ad-link:hover {
+      text-decoration: underline;
+    }
+
+    .ad-close {
+      background: none;
+      border: none;
+      color: #999;
+      padding: 0;
+      font-size: 14.4px;
+      cursor: pointer;
+      line-height: 1;
+      position: absolute;
+      top: 6px;
+      right: 10px;
+    }
+
+    .ad-close:hover {
+      color: #666;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>测试弹窗广告</h1>
+  <p>页面加载后 3 秒会显示弹窗广告</p>
+
+  <script>
+    // 页面加载完成后添加广告
+    window.onload = function() {
+      // 页面加载后 3 秒显示广告
+      setTimeout(function() {
+        var ad = document.createElement('div');
+        ad.className = 'ad-popup';
+        ad.innerHTML = '<button class="ad-close">×</button><div class="ad-content"><h3>🚀 网络工具</h3><p>新加坡实体企业运营，支持 AI & 视频解锁 全系产品，Win/Mac/iPhone/Android 设备均可使用。</p><ul><li>推荐套餐：99元 / 99999GB</li><li>最低 9.9元/年起</li><li>流量不限时，用完即止，送谷歌账号</li></ul><p class="ad-coupon">八五折优惠券：oqPCcC84</p><a class="ad-link" href="https://skylumo.cc" target="_blank" rel="noopener noreferrer">点击进入</a></div>';
+        document.body.appendChild(ad);
+        
+        // 添加关闭按钮事件
+        document.querySelector('.ad-close').onclick = function() {
+          ad.remove();
+        };
+      }, 3000);
+    };
+  </script>
+</body>
+</html>

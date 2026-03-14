@@ -2,13 +2,13 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  // base 设置成你的github仓库名
-  base: '/vitepress-demo/',
+  // base 设置成根路径
+  base: '/',
   // 排除 skills 目录，不参与构建
   srcExclude: ['skills/**'],
   // 网站图标配置
   head: [
-    ['link', { rel: 'icon', href: '/vitepress-demo/favicon.svg' }]
+    ['link', { rel: 'icon', href: '/favicon.svg' }]
   ],
   locales: {
     // 中文（默认主语言，根路径）
@@ -17,18 +17,18 @@ export default defineConfig({
       lang: 'zh-CN',
       themeConfig: {
         // 站点标题和logo
-        siteTitle: 'VitePress 演示',
-        logo: '/vitepress-demo/logo.svg',
+        siteTitle: 'Cyber Trainer',
+        logo: '/logo.svg',
         nav: [
           { text: '首页', link: '/' },
-          { text: '示例', link: '/markdown-examples' }
+          { text: '全部资源概述', link: '/全部资源概述' }
         ],
         sidebar: [
           {
             text: '示例',
             items: [
               { text: 'Markdown 示例', link: '/markdown-examples' },
-              { text: '运行时 API 示例', link: '/api-examples' }
+              { text: '全部资源概述', link: '/全部资源概述' }
             ]
           }
         ]
@@ -41,8 +41,8 @@ export default defineConfig({
       link: '/en/',
       themeConfig: {
         // 站点标题和logo
-        siteTitle: 'VitePress Demo',
-        logo: '/vitepress-demo/logo.svg',
+        siteTitle: 'Cyber Trainer',
+        logo: '/logo.svg',
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Examples', link: '/en/markdown-examples' }
