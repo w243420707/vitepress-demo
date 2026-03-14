@@ -16,7 +16,7 @@ export default {
         --ad-scale: 0.9;
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        right: 18px;
         left: auto;
         width: 360px;
         background: var(--vp-c-bg);
@@ -33,10 +33,12 @@ export default {
 
       .cyber-offer-popup .offer-content {
         position: relative;
-        padding-bottom: 32px;
-        max-width: 300px;
-        margin: 0 auto;
+        width: calc(102% - 20px);
+        max-width: 350px;
+        margin: 0 0 0 auto;
         text-align: left;
+        padding-right: 16px;
+        padding-bottom: 32px;
       }
       
       .cyber-offer-popup .offer-header {
@@ -138,9 +140,8 @@ export default {
           </div>
           <p>新加坡实体企业运营，支持 AI和视频解锁 全系产品，Win/Mac/iPhone/Android 均可使用。</p>
           <ul>
-            <li>推荐套餐</li>
-            <li>99元 / 99999GB</li>
-            <li>最低 9.9元/年起</li>
+            <li>推荐套餐：99元 / 99999GB</li>
+            <li>     最低 9.9元/年起</li>
             <li>流量不限时，用完即止，送谷歌账号</li>
           </ul>
           <p class="offer-coupon">八五折优惠券：oqPCcC84</p>
