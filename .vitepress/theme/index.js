@@ -1,12 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
-import { onMounted } from 'vue'
 import './styles/fonts.css'
 import './styles/custom.css'
 
 export default {
   ...DefaultTheme,
   enhanceApp({ app, router }) {
-    // 只在客户端执行
     if (typeof document === 'undefined') return
     
     // 添加广告样式
@@ -140,7 +138,7 @@ export default {
           </div>
           <p>新加坡实体企业运营，支持 AI和视频解锁 全系产品，Win/Mac/iPhone/Android 均可使用。</p>
           <ul>
-            <li>推荐套餐：99元 / 99999GB</li>
+            <li style="color: var(--vp-c-brand-1);">推荐套餐：99元 / 99999GB</li>
             <li>     最低 9.9元/年起</li>
             <li>流量不限时，用完即止，送谷歌账号</li>
           </ul>

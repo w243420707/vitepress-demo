@@ -42,14 +42,25 @@ export default defineConfig({
         logo: '/logo.svg',
         nav: [
           { text: '首页', link: '/' },
-          { text: '全部资源概述', link: '/全部资源概述' }
+          { text: 'Git 教程', link: '/91git' },
+          { text: '网络环境', link: '/网络环境' },
+          { text: 'GITHUB 资源汇总', link: '/全部资源概述' }
         ],
         sidebar: [
           {
-            text: '示例',
+            text: '📚 Git 教程',
+            link: '/git-tutorial',
             items: [
-              { text: '全部资源概述1', link: '/全部资源概述' },
-              { text: '全部资源概述2', link: '/全部资源概述' }
+              { text: '01- Git 基础', link: '/91git' },
+              { text: '02- 网络环境配置', link: '/网络环境' }
+            ]
+          },
+          {
+            text: '🚀 GitHub 资源',
+            link: '/github-resources',
+            items: [
+              { text: '01- GitHub 使用指南', link: '/github-guide' },
+              { text: '02- 全部资源概述', link: '/全部资源概述' }
             ]
           }
         ]
@@ -83,6 +94,10 @@ export default defineConfig({
   themeConfig: {
     search: {
       provider: 'local'
+    },
+    outline: {
+      level: [2, 3],
+      label: '目录'
     }
   }
 })
