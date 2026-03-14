@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as s,ah as i}from"./chunks/framework.Cnj7lwEt.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"网络环境.md","filePath":"网络环境.md"}'),r={name:"网络环境.md"};function l(n,a,o,c,h,d){return s(),t("div",null,a[0]||(a[0]=[i("",9)]))}const g=e(r,[["render",l]]);export{_ as __pageData,g as default};

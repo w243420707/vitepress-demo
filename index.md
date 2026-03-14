@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "赛博炼丹师"
-  text: "视频资源同步分享站"
+  text: "致力于可视化全部github项目"
   tagline: 今天干点啥🤔
   actions:
     - theme: brand
