@@ -1,17 +1,36 @@
 import { defineConfig } from 'vitepress'
 
+const base = process.env.VITEPRESS_BASE || '/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // 站点标题
-  title: '赛博资源站',  
-  // base 设置成根路径
-  base: '/',
+  title: '赛博资源站',
+  // 自定义域名请保持 '/', 项目页可在构建时传入 VITEPRESS_BASE=/<repo>/
+  base,
   // 排除 skills 目录，不参与构建
   srcExclude: ['skills/**'],
   // 网站图标配置
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg' }]
   ],
+  // 构建时复制到输出目录的静态资源
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            const info = assetInfo.name.split('.');
+            const ext = info[info.length - 1];
+            if (/\.(woff2?|ttf|otf|eot)$/.test(assetInfo.name)) {
+              return `fonts/[name][extname]`;
+            }
+            return `assets/[name]-[hash][extname]`;
+          }
+        }
+      }
+    }
+  },
   locales: {
     // 中文（默认主语言，根路径）
     root: {
@@ -29,8 +48,8 @@ export default defineConfig({
           {
             text: '示例',
             items: [
-              { text: 'Markdown 示例', link: '/markdown-examples' },
-              { text: '全部资源概述', link: '/全部资源概述' }
+              { text: '全部资源概述1', link: '/全部资源概述' },
+              { text: '全部资源概述2', link: '/全部资源概述' }
             ]
           }
         ]
