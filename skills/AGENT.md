@@ -260,8 +260,7 @@ npm run docs:dev
 
 此命令会：
 1. 启动 VitePress 开发服务器
-2. 自动在浏览器中打开本地预览地址（通常是 `http://localhost:5173`）
-3. 启用热模块替换（HMR），文件修改后自动刷新
+2. 启用热模块替换（HMR），文件修改后自动刷新
 
 ### 开发模式特点
 
@@ -310,6 +309,31 @@ npm run docs:build
 1. 检查 `docs` 目录是否生成
 2. 验证构建产物是否完整
 3. 运行 `npm run docs:preview` 预览构建结果
+
+### 自动推送到 GitHub
+
+构建完成后，自动将更改推送到 GitHub：
+
+```bash
+# 添加所有更改
+git add .
+
+# 提交更改
+git commit -m "deploy: 构建并部署站点"
+
+# 推送到 GitHub
+git push origin main
+```
+
+此步骤会：
+1. 将构建生成的 `docs` 目录添加到 Git 暂存区
+2. 创建提交，记录部署信息
+3. 推送到 GitHub 触发自动部署（如配置了 GitHub Pages）
+
+**注意事项**：
+- 确保已配置 Git 用户信息
+- 确保有推送权限
+- 如使用 GitHub Pages，推送后会自动重新部署站点
 
 ### 常见构建错误
 
